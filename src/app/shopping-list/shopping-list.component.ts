@@ -9,15 +9,13 @@ import { ShoppingService } from './shopping.service';
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
-  constructor(private shoppingService: ShoppingService) {
-
-   }
+  constructor(private shoppingService: ShoppingService) {}
 
   ngOnInit(): void {
     this.ingredients = this.shoppingService.getIngredients();
-    this.shoppingService.shoppingEventEmitter.subscribe(ingredients=>{
-      this.ingredients = ingredients;
-    })
-  }
 
+    this.shoppingService.shoppingEventEmitter.subscribe(ingredients => {
+      this.ingredients = ingredients;
+    });
+  }
 }
