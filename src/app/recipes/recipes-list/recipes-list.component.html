@@ -9,7 +9,6 @@
     <app-recipes-items
     *ngFor='let recipeItem of recipes'
     [recipe]='recipeItem'
-    (recipeItemSelected)="getCurrentRecipe(recipeItem)"
     ></app-recipes-items>
   </div>
 </div>
