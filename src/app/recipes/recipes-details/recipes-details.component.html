@@ -16,11 +16,24 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group">
-      <button (click)="onAddToShoppingList()">To Shopping List</button>
-      <select name="dog-names" id="dog-names">
-        <option value="dave">Edit Recipe List</option>
-        <option value="pumpernickel">Delete Recipe</option>
-      </select>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onAddToShoppingList()">
+        To Shopping List
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning"
+        (click)="navigateToEditing()">
+        Edit Recipe List
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="onAddToShoppingList()">
+        Delete Recipe List
+      </button>
     </div>
   </div>
 </div>

@@ -9,26 +9,28 @@ import { ShoppingService } from '../shopping-list/shopping.service';
 export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
-      'Biryani',
-      'Test desc',
+      'Coffee',
+      'Ghar ki coffee ka swad',
       'https://cdn.pixabay.com/photo/2020/05/11/21/57/bake-5160388_960_720.jpg',
       [new Ingredient('Rice', 1), new Ingredient('Chicken', 1)]
     ),
     new Recipe(
-      'Paneer Lasoni',
-      'Test Second desc',
-      'https://cdn.pixabay.com/photo/2020/05/11/21/57/bake-5160388_960_720.jpg',
+      'Ice Cream ',
+      'Vanilla Flavor',
+      'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_960_720.jpg',
       [new Ingredient('Paneer', 1), new Ingredient('Lasoni', 1)]
     ),
   ];
 
-  recipeSelected = new EventEmitter<Recipe>();
   constructor(private shoppingService: ShoppingService) {}
 
-  getRecipe() {
+  getRecipe(): Recipe[] {
     return [...this.recipes];
   }
 
+  getSingleRecipe(id): Recipe {
+    return this.recipes[id];
+  }
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingService.addMultipleIngredients(ingredients);
   }
