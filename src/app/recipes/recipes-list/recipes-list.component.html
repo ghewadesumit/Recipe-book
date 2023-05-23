@@ -1,15 +1,19 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
   </div>
 </div>
-<hr>
+<hr />
 <div class="row">
   <div class="col-md-7">
-    <app-recipes-items
-    *ngFor='let recipeItem of recipes'
-    [recipe]='recipeItem'
-    (recipeItemSelected)="getCurrentRecipe(recipeItem)"
-    ></app-recipes-items>
+    <!-- This component take RecipeItems Component as child component
+    - Then loops the items in recipe Array into the Recipe Item Component.
+    - On receiving the items RecipeItem Component renders them individually. -->
+    <div class="list-group">
+      <app-recipes-items
+        *ngFor="let recipeItem of recipes; let i = index"
+        [recipe]="recipeItem"
+        [index]="i"></app-recipes-items>
+    </div>
   </div>
 </div>
